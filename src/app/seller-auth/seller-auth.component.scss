@@ -1,0 +1,28 @@
+.seller-auth{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+  .common-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .form-input{
+       width: 350px;
+      font-size: 20px;
+      outline: none;
+      border: 1px solid rgb(139, 9, 231);
+      border-radius: 5px;
+      text-indent:5px;
+      padding: 5px;
+    }
+    .form-button{
+      cursor: pointer;
+    }
+    .error-msg{
+      display: block; color: red;
+    }
+
+  }
+}

@@ -1,0 +1,48 @@
+.header-wrapper
+{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height:50px;
+  .logo{
+    width: 20%;
+    min-width: 150px;
+    h1{
+      padding-left: 10px;
+    }
+  }
+  .search-bar{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    input{
+      border-radius: 10px;
+      border: 1px solid rgb(139, 9, 231);
+      width: 80%;
+      height: 30px;
+      text-indent: 10px;
+      outline: none;
+      letter-spacing: 1px;
+      font-size: 20px;
+    }
+    img{
+      position: relative;
+      left: -30px;
+      height: 20px;
+    }
+  }
+  .nav-links{
+    width: 30%;
+    display: flex;
+    align-items: center ;
+    ul{
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      font-size: 20px;
+      li{
+        cursor: pointer;
+      }
+    }
+  }
+}

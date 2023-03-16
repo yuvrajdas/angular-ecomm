@@ -1,0 +1,28 @@
+{
+  "seller": [
+    {
+      "name": "yuvrajdas",
+      "email": "yuvrajdas@seller.com",
+      "password": "abc@123",
+      "id": "xy12#s"
+    },
+    {
+      "username": "yuvraj",
+      "email": "yuvrajdas1531@gmail.com",
+      "password": "yuvraj",
+      "id": "92KKW4T"
+    },
+    {
+      "username": "abc",
+      "email": "abc@abc.com",
+      "password": "abc",
+      "id": "RXFHuq1"
+    },
+    {
+      "username": "y",
+      "email": "y@g.com",
+      "password": "y@g.com",
+      "id": "GyYvc6k"
+    }
+  ]
+}
