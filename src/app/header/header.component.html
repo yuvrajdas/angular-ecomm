@@ -1,16 +1,24 @@
 <div class="header-wrapper">
   <div class="logo">
-    <h1>E-Commerce</h1>
+    <h1 routerLink="/">E-Commerce</h1>
   </div>
-  <div class="search-bar">
+  <div  *ngIf="menuType==='default'" class="search-bar">
     <input type="text" placeholder="Search here..."><img src="assets/icons/search.svg" alt="">
   </div>
   <div class="nav-links">
-    <ul>
-      <li routerLink="/home">Home</li>
-      <li routerLink="/seller-auth">Seller</li>
-      <li>Login</li>
-      <li>Cart (0)</li>
-    </ul>
+    <div [ngSwitch]="menuType">
+      <ul *ngSwitchCase="'default'">
+        <li routerLink="/home">Home</li>
+        <li routerLink="/seller-auth">Seller</li>
+        <li>Login</li>
+        <li>Cart (0)</li>
+      </ul>
+      <ul *ngSwitchCase="'seller'">
+        <li routerLink="/home">Product List</li>
+        <li routerLink="/seller-auth">Add Product</li>
+        <li (click)="logout()">Logout</li>
+        <li>Seller Name</li>
+      </ul>
+    </div>
   </div>
 </div>

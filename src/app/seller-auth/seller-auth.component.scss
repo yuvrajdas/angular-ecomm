@@ -23,6 +23,12 @@
     .error-msg{
       display: block; color: red;
     }
-
+    .link{
+      cursor:pointer;
+      text-decoration: underline;
+    }
+  }
+  .login-error, .signup-error{
+    color: red;
   }
 }

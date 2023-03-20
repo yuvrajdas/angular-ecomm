@@ -1,44 +1,62 @@
 
 <!-- SingUP Form -->
-<div class="seller-auth">
+<div class="seller-auth" *ngIf="!showLoginForm">
   <div class="seller-header">
     <h1>Sign-UP</h1>
   </div>
-  <form [formGroup]="sellerSignUp" (ngSubmit)="submitSellerSingUPForm(sellerSignUp.value)">
+  <div>
+    <h4 class="signup-error">{{isExistingUser}}</h4>
+  </div>
+  <form [formGroup]="sellersignUp" (ngSubmit)="sellerSingUpForm(sellersignUp.value)">
     <div class="common-form">
       <div class="form-group">
-        <input class="form-input" formControlName="username" type="text" placeholder="Enter username"><small *ngIf="sellerSignUp.controls['username'].invalid && sellerSignUp.controls['username'].touched" class="error-msg">Username field is required</small>
+        <input class="form-input" formControlName="username" type="text" placeholder="Enter username"><small
+          *ngIf="sellersignUp.controls['username'].invalid && sellersignUp.controls['username'].touched"
+          class="error-msg">Username field is required</small>
       </div>
       <div class="form-group">
         <input class="form-input" formControlName="email" type="email" placeholder="Enter email">
-        <small *ngIf="sellerSignUp.controls['email'].invalid && sellerSignUp.controls['email'].touched" class="error-msg">Email field is required</small>
+        <small *ngIf="sellersignUp.controls['email'].invalid && sellersignUp.controls['email'].touched" class="error-msg">Email
+          field is required</small>
       </div>
       <div class="form-group">
-        <input class="form-input" formControlName="password" type="password" placeholder="Enter password"><small *ngIf="sellerSignUp.controls['password'].invalid && sellerSignUp.controls['password'].touched" class="error-msg">Password field is required</small>
+        <input class="form-input" formControlName="password" type="password" placeholder="Enter password"><small
+          *ngIf="sellersignUp.controls['password'].invalid && sellersignUp.controls['password'].touched"
+          class="error-msg">Password field is required</small>
       </div>
-      <button class="form-button form-input" [disabled]="sellerSignUp.invalid">SignUp</button>
+      <button class="form-button form-input" [disabled]="sellersignUp.invalid">Sign UP</button>
+      <div>
+        <p>Already have an account? <span class="link" style="cursor:pointer; text-decoration: underline;"
+            (click)="goToLoginForm()"> Login Here</span></p>
+      </div>
     </div>
   </form>
 </div>
 
 <!-- Login Form -->
-<!-- <div class="seller-auth">
+<div class="seller-auth" *ngIf="showLoginForm">
   <div class="seller-header">
     <h1>Login Here</h1>
   </div>
-  <form [formGroup]="sellerSignUp" (ngSubmit)="submitSellerSingUPForm(sellerSignUp.value)">
+  <div>
+    <h4 class="login-error">{{isLoginError}}</h4>
+  </div>
+  <form [formGroup]="sellerLogin" (ngSubmit)="sellerLoginForm(sellerLogin.value)">
     <div class="common-form">
       <div class="form-group">
-        <input class="form-input" formControlName="username" type="text" placeholder="Enter username"><small *ngIf="sellerSignUp.controls['username'].invalid && sellerSignUp.controls['username'].touched" class="error-msg">Username field is required</small>
-      </div>
-      <div class="form-group">
         <input class="form-input" formControlName="email" type="email" placeholder="Enter email">
-        <small *ngIf="sellerSignUp.controls['email'].invalid && sellerSignUp.controls['email'].touched" class="error-msg">Email field is required</small>
+        <small *ngIf="sellerLogin.controls['email'].invalid && sellerLogin.controls['email'].touched" class="error-msg">Email
+          field is required</small>
       </div>
       <div class="form-group">
-        <input class="form-input" formControlName="password" type="password" placeholder="Enter password"><small *ngIf="sellerSignUp.controls['password'].invalid && sellerSignUp.controls['password'].touched" class="error-msg">Password field is required</small>
+        <input class="form-input" formControlName="password" type="password" placeholder="Enter password"><small
+          *ngIf="sellerLogin.controls['password'].invalid && sellerLogin.controls['password'].touched"
+          class="error-msg">Password field is required</small>
       </div>
-      <button class="form-button form-input" [disabled]="sellerSignUp.invalid">SignUp</button>
+      <button class="form-button form-input" [disabled]="sellerLogin.invalid">Login</button>
+      <div>
+        <p>Don't have an account? <span class="link" (click)="goTosignUpForm()">Register Here</span></p>
+      </div>
     </div>
   </form>
-</div> -->
+</div>

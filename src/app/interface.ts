@@ -1,8 +1,13 @@
 
-interface IsignUpFrom {
+interface signUp {
   username: string;
   email: string;
   password: string;
 }
 
-export { IsignUpFrom }
+interface login {
+  email: string,
+  password: string,
+}
+
+export { signUp, login }
