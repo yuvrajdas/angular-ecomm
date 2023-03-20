@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
   menuType: string = 'default';
+  loggedInUser!:any;
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -14,6 +15,7 @@ export class HeaderComponent {
       if (event.url) {
         if (event.url.includes('seller') && localStorage.getItem('seller-cred')) {
           this.menuType = 'seller';
+          this.loggedInUser = localStorage.getItem('seller-cred');
         } else {
           this.menuType = 'default';
         }

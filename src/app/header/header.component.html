@@ -15,9 +15,9 @@
       </ul>
       <ul *ngSwitchCase="'seller'">
         <li routerLink="/home">Product List</li>
-        <li routerLink="/seller-auth">Add Product</li>
+        <li routerLink="/seller-add-product">Add Product</li>
         <li (click)="logout()">Logout</li>
-        <li>Seller Name</li>
+        <li>{{loggedInUser}}</li>
       </ul>
     </div>
   </div>

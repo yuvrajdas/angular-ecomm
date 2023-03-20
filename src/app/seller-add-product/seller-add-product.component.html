@@ -1,0 +1,48 @@
+<div class="seller-add-product">
+  <div class="seller-header">
+    <h1>Add Product Form</h1>
+  </div>
+  <div>
+    <h4 class="invalid-form-error">Validation Error</h4>
+  </div>
+  <form [formGroup]="addProductFormGroup" (ngSubmit)="sellerSingUpForm(addProductFormGroup.value)">
+    <div class="common-form">
+      <div class="form-group">
+        <input class="form-input" formControlName="productName" type="text" placeholder="Enter product name"><small
+          *ngIf="addProductFormGroup.controls['productName'].invalid && addProductFormGroup.controls['productName'].touched"
+          class="error-msg">Product Name field is required</small>
+      </div>
+      <div class="form-group">
+        <input class="form-input" formControlName="productPrice" type="text" placeholder="Enter product price">
+        <small
+          *ngIf="addProductFormGroup.controls['productPrice'].invalid && addProductFormGroup.controls['productPrice'].touched"
+          class="error-msg">Product Price
+          field is required</small>
+      </div>
+      <div class="form-group">
+        <input class="form-input" formControlName="productColor" type="text" placeholder="Enter product color"><small
+          *ngIf="addProductFormGroup.controls['productColor'].invalid && addProductFormGroup.controls['productColor'].touched"
+          class="error-msg">Product Color field is required</small>
+      </div>
+      <div class="form-group">
+        <input class="form-input" formControlName="productCategory" type="text"
+          placeholder="Enter product category"><small
+          *ngIf="addProductFormGroup.controls['productCategory'].invalid && addProductFormGroup.controls['productCategory'].touched"
+          class="error-msg">Product Category field is required</small>
+      </div>
+      <div class="form-group">
+        <input class="form-input" formControlName="productDescription" type="text"
+          placeholder="Enter product description"><small
+          *ngIf="addProductFormGroup.controls['productDescription'].invalid && addProductFormGroup.controls['productDescription'].touched"
+          class="error-msg">Product Description field is required</small>
+      </div>
+      <div class="form-group">
+        <input class="form-input" formControlName="productImgUrl" type="text"
+          placeholder="Enter product image URL"><small
+          *ngIf="addProductFormGroup.controls['productImgUrl'].invalid && addProductFormGroup.controls['productImgUrl'].touched"
+          class="error-msg">Product Image Url field is required</small>
+      </div>
+      <button class="form-button form-input" [disabled]="addProductFormGroup.invalid">Sign UP</button>
+    </div>
+  </form>
+</div>
